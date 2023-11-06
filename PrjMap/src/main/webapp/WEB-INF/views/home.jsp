@@ -66,7 +66,16 @@
 				var bounds = new kakao.maps.LatLngBounds();
 
 				for (var i = 0; i < data.length; i++) {
-					bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+					var placePosition = new kakao.maps.LatLng(data[i].y, data[i].x);
+					
+					// 마커를 검색 장소로 이동
+					marker.setPosition(placePosition);
+					
+					// 마커를 표시					
+					marker.setMap(map);
+					
+					// 좌표 추가
+					bounds.extend(placePosition);
 				}
 
 				// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
@@ -74,19 +83,6 @@
 			}
 		}
 
-		kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-			// 클릭한 위도, 경도 정보를 가져옵니다
-			var latlng = mouseEvent.latLng;
-
-			// 마커 위치를 클릭한 위치로 옮깁니다
-			marker.setPosition(latlng);
-			
-			// 지도를 클릭 위치로 이동
-			map.setCenter(latlng);
-
-			opener.document.getElementById('placeX').value = latlng.getLat();
-			opener.document.getElementById('placeY').value = latlng.getLng();
-		});
 	</script>
 </body>
 </html>
