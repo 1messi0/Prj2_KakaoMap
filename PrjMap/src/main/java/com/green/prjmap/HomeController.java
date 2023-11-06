@@ -1,4 +1,4 @@
-package com.green.prj01;
+package com.green.prjmap;
 
 import java.text.DateFormat;
 import java.util.Date;

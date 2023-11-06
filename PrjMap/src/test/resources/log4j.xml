@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.green.prj01">
+	<logger name="com.green.prjmap">
 		<level value="info" />
 	</logger>
 	

@@ -77,6 +77,12 @@
 					// 좌표 추가
 					bounds.extend(placePosition);
 				}
+				
+/* 		// 마커 클릭 이벤트 리스너를 추가하여 인포윈도우 열기
+		kakao.maps.event.addListener(marker, 'click', function() {
+			infowindow.setContent(data[0].place_name);
+			infowindow.open(map, marker);
+		}); */
 
 				// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
 				map.setBounds(bounds);
